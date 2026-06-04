@@ -1,0 +1,9 @@
+export const STATUS_COMPLETE: string = 'complete';
+export const STATUS_INCOMPLETE: string = 'incomplete';
+export const STATUS_SUSPENDED: string = 'suspended';
+export const STATUS_ACTIVE: string = 'active';
+export const STATUS_INACTIVE: string = 'inactive';
+export const STATUS_PENDING: string = 'pending';
+export const STATUS_VALID: string = 'valid';
+export const STATUS_INVALID: string = 'invalid';
+export const STATUS_UNKNOWN: string = 'unknown';

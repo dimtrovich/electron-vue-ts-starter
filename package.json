@@ -1,0 +1,74 @@
+{
+  "name": "your-app-name",
+  "productName": "YourProductName",
+  "version": "1.0.0-beta.1",
+  "copyright": "Copyright (c) 2025 your-name",
+  "description": "your application description",
+  "main": ".vite/build/main.js",
+  "urls": {
+    "update": "http://localhost:5001/api/v1/updates/YourProductName"
+  },
+  "scripts": {
+    "dev": "vite dev --config vite.renderer.config.mjs",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make",
+    "publish": "electron-forge publish",
+    "push-win": "upboard_publish http://localhost:5001/api/v1/releases/YourProductName/win32/x64 out/make/squirrel.windows/x64",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "zero",
+    "email": "zero.kwok@foxmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@electron-toolkit/preload": "^3.0.1",
+    "@unhead/vue": "^3.1.1",
+    "axios": "^1.17.0",
+    "bootstrap-vue-next": "^0.45.4",
+    "dayjs": "^1.11.21",
+    "electron-log": "^5.3.4",
+    "electron-squirrel-startup": "^1.0.1",
+    "electron-store": "^10.0.1",
+    "fluid-storage": "^1.1.1",
+    "lodash-es": "^4.17.21",
+    "php-in-js": "^1.1.0",
+    "pinia": "^3.0.4",
+    "pinia-plugin-persistedstate": "^4.7.1",
+    "semver": "^7.7.1",
+    "sweetalert2": "^11.26.25",
+    "vue": "^3.5.35",
+    "vue-i18n": "^11.1.2",
+    "vue-router": "^4.5.0",
+    "vuex": "^4.0.2"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^7.7.0",
+    "@electron-forge/maker-deb": "^7.7.0",
+    "@electron-forge/maker-squirrel": "^7.7.0",
+    "@electron-forge/maker-zip": "^7.7.0",
+    "@electron-forge/plugin-auto-unpack-natives": "^7.7.0",
+    "@electron-forge/plugin-fuses": "^7.7.0",
+    "@electron-forge/plugin-vite": "^7.7.0",
+    "@electron/asar": "^3.3.1",
+    "@electron/fuses": "^1.8.0",
+    "@pengx17/electron-forge-maker-appimage": "^1.2.1",
+    "@vitejs/plugin-vue": "^6.0.7",
+    "electron": "34.5.1",
+    "electron-devtools-installer": "^4.0.0",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.9.2",
+    "prettier": "^3.8.3",
+    "rcedit": "^4.0.1",
+    "unplugin-vue-components": "^32.1.0",
+    "vite": "^8.0.16",
+    "vite-plugin-vue-devtools": "^7.7.2",
+    "vue-tsc": "^3.3.3"
+  },
+  "engines": {
+    "node": "^22.13"
+  }
+}
