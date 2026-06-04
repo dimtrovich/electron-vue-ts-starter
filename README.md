@@ -378,6 +378,9 @@ Vérifiez que les handlers IPC sont enregistrés dans `src/main/ipc.js` avant la
 
 ---
 
+## Credit
+https://github.com/ZeroKwok/ElectronVueTemplate
+
 ## 📝 License
 
 MIT © 2026 dimtrovich - [LICENSE](LICENSE)
