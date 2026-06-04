@@ -28,7 +28,7 @@ export const AVAILABLE_LOCALES: string[] = (import.meta.env.AVAILABLE_LOCALES ||
 /**
  * Langue par défaut
  */
-export const DEFAULT_LOCALE: string = import.meta.env.DEFAULT_LOCALE || 'fr'
+export const DEFAULT_LOCALE: string = import.meta.env.DEFAULT_LOCALE || 'en'
 
 /**
  * Fuseau horaire par defaut de l'application

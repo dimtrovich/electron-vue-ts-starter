@@ -4,9 +4,6 @@ import { createBootstrap } from 'bootstrap-vue-next'
 
 import { createHead } from '@unhead/vue/client'
 
-import { createPinia, type Pinia } from 'pinia'
-import { createPersistedState } from 'pinia-plugin-persistedstate'
-
 import { APP_ID, APP_NAME, APP_VERSION } from '@/utils/constants'
 
 import { findLocale } from './i18n'
@@ -25,10 +22,6 @@ export default function (app: App): App {
 		],
 	})
 	app.use(head)
-
-	const pinia: Pinia = createPinia()
-	pinia.use(createPersistedState({ key: (id: string) => `${APP_ID}.${id}` }))
-	app.use(pinia)
 
 	app.use(router)
 

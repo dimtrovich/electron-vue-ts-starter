@@ -4,26 +4,7 @@ import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-rou
 import { IS_ELECTRON, ROUTES_EMPTY_LAYOUT } from '@/utils/constants'
 import runMiddlewares from '@/middlewares/handler/runner'
 
-const routes: RouteRecordRaw[] = [
-	{
-		path: '/',
-		name: 'home',
-		meta: { noAuth: true },
-		component: () => import('@/views/Home.vue'),
-	},
-	{
-		path: '/about',
-		name: 'about',
-		meta: { noAuth: true },
-		component: () => import('@/views/About.vue'),
-	},
-	{
-		path: '/:pathMatch(.*)*', // Catch-all route for undefined paths
-		name: 'notFound',
-		meta: { noAuth: true },
-		component: () => import('@/views/404.vue'),
-	},
-]
+const routes: RouteRecordRaw[] = []
 
 const files = import.meta.glob('./**/*.routes.ts', { eager: true })
 Object.entries(files).forEach(([, definition]) => {

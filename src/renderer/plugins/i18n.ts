@@ -4,7 +4,7 @@ import type { App } from 'vue'
 
 import { AVAILABLE_LOCALES, DEFAULT_LOCALE } from '@/utils/constants'
 
-// import { $storage } from './storage'
+import { $storage } from './storage'
 
 const messages = loadLocaleMessages()
 
@@ -23,10 +23,10 @@ export const $i18n = {
 export const { t: $t } = $i18n
 
 export function changeLanguage(language: string): void {
-	// $storage.cookie.set('locale', language)
+	$storage.cookie.set('locale', language)
 	document.querySelector('html')?.setAttribute('lang', language)
 
-	i18n.global.locale = language
+	i18n.global.locale.value = language
 }
 
 export default function (app: App): App {
@@ -42,7 +42,7 @@ export default function (app: App): App {
  * @return {String}
  */
 export function findLocale(): string {
-	let lang = null // $storage.cookie.get('locale') as string
+	let lang = $storage.cookie.get('locale') as string
 
 	if (!lang) {
 		lang = window.navigator.language.substr(0, 2).toLowerCase()
@@ -57,21 +57,15 @@ export function findLocale(): string {
 
 function loadLocaleMessages(): Record<string, any> {
 	const messages: Record<string, any> = {}
-	const files = import.meta.glob('../locales/*.js', { eager: true })
+	const files = import.meta.glob('../locales/*.ts', { eager: true })
 
 	Object.entries(files).forEach(([path, definition]) => {
-		/* const parts = path.split('/')
-		const locale: string = parts[2] || DEFAULT_LOCALE
-		const namespace = parts.at(-1)!.replace('.json', '')
+		const locale = path.split('/').at(-1)!.replace('.ts', '')
 		if (!messages[locale]) {
 			messages[locale] = {}
 		}
-		if (!messages[locale][namespace]) {
-			messages[locale][namespace] = {}
-		}
 		const message = (definition as any)?.default
-		 messages[locale][namespace] = { ...messages[locale][namespace], ...message }
-            */
+		messages[locale] = { ...messages[locale], ...message }
 	})
 
 	return messages

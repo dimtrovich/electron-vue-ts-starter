@@ -11,10 +11,13 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
-							<b-link class="nav-link" to="/">Home</b-link>
+							<b-link class="nav-link" to="/">{{ $t('app.nav.home') }}</b-link>
 						</li>
 						<li class="nav-item">
-							<b-link class="nav-link" to="/about">About</b-link>
+							<b-link class="nav-link" to="/about">{{ $t('app.nav.about') }}</b-link>
+						</li>
+						<li class="nav-item">
+							<b-link class="nav-link" to="/settings">{{ $t('app.nav.settings')}}</b-link>
 						</li>
 					</ul>
 				</div>
