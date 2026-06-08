@@ -1,5 +1,5 @@
 /* eslint-disable sort-keys */
-import { createRouter, createWebHashHistory, type RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, createWebHistory, type RouteRecordRaw } from 'vue-router'
 
 import { IS_ELECTRON, ROUTES_EMPTY_LAYOUT } from '@/utils/constants'
 import runMiddlewares from '@/middlewares/handler/runner'
@@ -23,9 +23,8 @@ for (const route of routes) {
 	}
 }
 
-const base = IS_ELECTRON ? null : import.meta.env.BASE_URL;
 const router = createRouter({
-	history: createWebHashHistory(base),
+	history: IS_ELECTRON ? createWebHashHistory() : createWebHistory(import.meta.env.BASE_URL),
 	linkActiveClass: 'active router-link-active',
 	routes,
 })

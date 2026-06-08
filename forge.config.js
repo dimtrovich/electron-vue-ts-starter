@@ -9,7 +9,7 @@ const writeCopyright = async (config, packageResult) => {
   const exePath = path.join(packageResult.outputPaths[0], `${pkg.name}.exe`)
   await rcedit(exePath, {
     'version-string': {
-      LegalCopyright: pkg.copyright || 'Copyright (c) 2025 default'
+      LegalCopyright: pkg.copyright || 'Copyright (c) 2026 default'
     }
   });
 };

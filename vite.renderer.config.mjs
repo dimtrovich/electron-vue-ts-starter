@@ -40,4 +40,18 @@ if (process.env.NODE_ENV == 'development') {
     config.plugins.push(VueDevTools());
 }
 
-export default defineConfig(config);
+export default defineConfig(({ command, forgeConfig, mode }) => {
+	const isDev = mode === 'development'
+	const isElectron = forgeConfig !== undefined
+
+	let base = '/'
+	if (!isDev && isElectron) {
+		// "./" =>  Chemin relatif pour l'app empaquetée Electron
+		base = './'
+	}
+
+	return {
+		...config,
+		base,
+	}
+});
